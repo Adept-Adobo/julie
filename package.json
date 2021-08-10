@@ -1,0 +1,27 @@
+{
+  "name": "products",
+  "version": "1.0.0",
+  "description": "microservice api for products",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "start": "nodemon server/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Adept-Adobo/products.git"
+  },
+  "author": "Julie Barwick",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Adept-Adobo/products/issues"
+  },
+  "homepage": "https://github.com/Adept-Adobo/products#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "jest": "^27.0.6",
+    "nodemon": "^2.0.12"
+  }
+}
