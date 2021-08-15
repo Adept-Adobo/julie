@@ -51,7 +51,7 @@ This service acts as a back-end system to provide the resources and data for all
       "category": "String",
       "default_price": "String",
       "created_at": "String",
-      "updated_at": "String"
+      "updated_at": "String",
       "features": [
         {
           "feature": "String",
@@ -71,22 +71,3 @@ This service acts as a back-end system to provide the resources and data for all
 **Success Status Code:** `200 OK`
 
 **Returns:** JSON
-
-```json
-    {
-      "id": "Number",
-      "name": "String",
-      "slogan": "String",
-      "description": "String",
-      "category": "String",
-      "default_price": "String",
-      "created_at": "String",
-      "updated_at": "String",
-      "features": [
-        {
-          "feature": "String",
-          "value": "String"
-        }
-      ]
-    }
-```
