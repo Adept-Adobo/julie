@@ -1,7 +1,7 @@
 const model = require('../model');
 
 module.exports = {
-  get: (req, res) => {
+  getProducts: (req, res) => {
     model.getProducts(1, 3)
       .then((data) => {
         console.log(data.rows);
@@ -12,7 +12,7 @@ module.exports = {
         res.sendStatus(404);
       });
   },
-  getProduct: (req, res) => {
+  getProductById: (req, res) => {
     const { id } = req.params;
     model.getProductInfo(id)
       .then((data) => {
@@ -34,7 +34,7 @@ module.exports = {
         if (data.rows.length === 0) {
           res.status(404).send('This product does not exist.');
         } else {
-          res.send(data.rows).status(200);
+          res.send(data.rows[0]).status(200);
         }
       })
       .catch((err) => {
