@@ -7,7 +7,8 @@ This service acts as a back-end system to provide the resources and data for all
   * Run `npm run create-db`
 
 ### Get products
-  * GET `/products` - Retrieves the list of products
+  * GET `/products`
+  * Retrieves the list of products
 
 **Query Parameters:**
   * `page` - Selects the page of results to return. Default 1.
@@ -31,7 +32,8 @@ This service acts as a back-end system to provide the resources and data for all
 ```
 
 ### Get product information
-  * GET `/products/:product_id` - Retrieves product level information for a specified product id
+  * GET `/products/:product_id`
+  * Retrieves product level information for a specified product id
 
 **Path Parameters:**
   * `product_id` - Required ID of the product requested
@@ -60,7 +62,8 @@ This service acts as a back-end system to provide the resources and data for all
 ```
 
 ### Get product styles
-  * GET `/products/:product_id/styles` - Retrieves all styles for a specified product id
+  * GET `/products/:product_id/styles`
+  * Retrieves all styles for a specified product id
 
 **Path Parameters:**
   * `product_id` - Required ID of the product requested
@@ -78,7 +81,7 @@ This service acts as a back-end system to provide the resources and data for all
       "category": "String",
       "default_price": "String",
       "created_at": "String",
-      "updated_at": "String"
+      "updated_at": "String",
       "features": [
         {
           "feature": "String",
