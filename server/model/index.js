@@ -1,10 +1,12 @@
 const db = require('../db');
 
 module.exports = {
-  getProducts: (count, page = 1) => {
-    const offset = page * 5 - count;
+  getProducts: (count = 5, page = 1) => {
+    const offset = (page * 5) - 5;
     const queryParams = [count, offset];
-    return db.query('SELECT * from products limit $1 offset $2', queryParams);
+    const queryString = 'SELECT * FROM products LIMIT $1 OFFSET $2';
+
+    return db.query(queryString, queryParams);
   },
 
   getProductInfo: (productId) => {

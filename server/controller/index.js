@@ -2,9 +2,9 @@ const model = require('../model');
 
 module.exports = {
   getProducts: (req, res) => {
-    model.getProducts(1, 3)
+    const { count, page } = req.query;
+    model.getProducts(count, page)
       .then((data) => {
-        console.log(data.rows);
         res.send(data.rows).status(200);
       })
       .catch((err) => {
@@ -58,5 +58,4 @@ module.exports = {
         res.sendStatus(404);
       });
   },
-
 };
