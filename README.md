@@ -120,8 +120,8 @@ The following are the services provided by this API.
 **Returns:** JSON
 ```json
     [
-      Number,
-      Number,
-      Number
+      "Number",
+      "Number",
+      "Number"
     ]
 ```
