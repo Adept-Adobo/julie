@@ -1,17 +1,6 @@
-const express = require('express');
-// const db = require('./db');
-const controller = require('./controller');
+const app = require('./app');
 
-const app = express();
-const port = 3000;
-
-app.get('/products', controller.get);
-
-app.get('/products/:id', controller.getProduct);
-
-app.get('/products/:id/styles', controller.getStyles);
-
-app.get('/products/:id/related', controller.getRelated);
+const port = 3001;
 
 app.listen(port, () => {
   console.log(`Listening at http://localhost:${port}`);

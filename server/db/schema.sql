@@ -5,76 +5,69 @@ CREATE DATABASE products_db;
 DROP TABLE IF EXISTS products;
 CREATE TABLE products
 (
-  id INT NOT NULL UNIQUE,
-  name VARCHAR(30),
-  slogan VARCHAR(150),
-  description VARCHAR(500),
-  category TEXT,
-  default_price NUMERIC(11, 2),
-  created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-  PRIMARY KEY(id)
+  "id" SERIAL PRIMARY KEY,
+  "name" VARCHAR(30),
+  "slogan" VARCHAR(150),
+  "description" VARCHAR(500),
+  "category" TEXT,
+  "default_price" NUMERIC(11, 2),
+  "created_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+  "updated_at" TIMESTAMP DEFAULT CURRENT_TIMESTAMP
 );
 
 DROP TABLE IF EXISTS features;
 CREATE TABLE features
 (
-  id INT NOT NULL UNIQUE,
-  product_id INT,
-  feature VARCHAR(30),
-  value VARCHAR(30),
-  PRIMARY KEY(id)
+  "id" SERIAL PRIMARY KEY,
+  "product_id" INT,
+  "feature" VARCHAR(30),
+  "value" VARCHAR(30)
 );
 
 DROP TABLE IF EXISTS styles;
 CREATE TABLE styles
 (
-  id INT NOT NULL UNIQUE,
-  product_id INT,
-  name VARCHAR(30),
-  sale_price NUMERIC(11, 2),
-  original_price NUMERIC(11, 2),
-  "default?" BOOLEAN,
-  PRIMARY KEY(id)
+  "id" SERIAL PRIMARY KEY,
+  "product_id" INT,
+  "name" VARCHAR(30),
+  "sale_price" NUMERIC(11, 2),
+  "original_price" NUMERIC(11, 2),
+  "default?" BOOLEAN
 );
 
 DROP TABLE IF EXISTS photos;
 CREATE TABLE photos
 (
-  id INT NOT NULL UNIQUE,
-  style_id INT,
-  thumbnail_url VARCHAR(260),
-  url VARCHAR(260),
-  PRIMARY KEY(id)
+  "id" SERIAL PRIMARY KEY,
+  "style_id" INT,
+  "url" VARCHAR(260),
+  "thumbnail_url" VARCHAR(260)
 );
 
 DROP TABLE IF EXISTS skus;
 CREATE TABLE skus
 (
-  id INT NOT NULL UNIQUE,
-  style_id INT,
-  size VARCHAR(10),
-  quantity SMALLINT,
-  PRIMARY KEY(id)
+  "id" SERIAL PRIMARY KEY,
+  "style_id" INT,
+  "size" VARCHAR(10),
+  "quantity" SMALLINT
 );
 
 DROP TABLE IF EXISTS related;
 CREATE TABLE related
 (
-  id INT NOT NULL UNIQUE,
-  product_id INT,
-  related_product_id INT,
-  PRIMARY KEY(id)
+  "id" SERIAL PRIMARY KEY,
+  "product_id" INT,
+  "related_product_id" INT
 );
 
 DROP TABLE IF EXISTS cart;
 CREATE TABLE cart
 (
-  id SERIAL NOT NULL UNIQUE,
-  user_session TEXT,
-  sku_id INT,
-  ACTIVE SMALLINT,
-  PRIMARY KEY(id)
+  "id" SERIAL PRIMARY KEY,
+  "user_session" TEXT,
+  "sku_id" INT,
+  "active" SMALLINT
 );
 
 -- Insert the data

@@ -1,10 +1,10 @@
 const model = require('../model');
 
 module.exports = {
-  get: (req, res) => {
-    model.getProducts(1, 3)
+  getProducts: (req, res) => {
+    const { count, page } = req.query;
+    model.getProducts(count, page)
       .then((data) => {
-        console.log(data.rows);
         res.send(data.rows).status(200);
       })
       .catch((err) => {
@@ -12,7 +12,8 @@ module.exports = {
         res.sendStatus(404);
       });
   },
-  getProduct: (req, res) => {
+
+  getProductById: (req, res) => {
     const { id } = req.params;
     model.getProductInfo(id)
       .then((data) => {
@@ -29,18 +30,26 @@ module.exports = {
 
   getStyles: (req, res) => {
     const { id } = req.params;
-    model.getProductStyles(id)
-      .then((data) => {
-        if (data.rows.length === 0) {
-          res.status(404).send('This product does not exist.');
-        } else {
-          res.send(data.rows).status(200);
-        }
-      })
-      .catch((err) => {
-        console.error(err.stack);
-        res.sendStatus(404);
-      });
+    if (Number.isNaN(Number(id))) {
+      res.status(404).send('Error: invalid product id provided');
+    } else {
+      model.getProductStyles(id)
+        .then((data) => {
+          if (data.rows.length === 0) {
+            const nonExistentProduct = {
+              product_id: id,
+              results: data.rows,
+            };
+            res.send(nonExistentProduct).status(200);
+          } else {
+            res.send(data.rows[0]).status(200);
+          }
+        })
+        .catch((err) => {
+          console.error(err.stack);
+          res.sendStatus(404);
+        });
+    }
   },
 
   getRelated: (req, res) => {
@@ -58,5 +67,4 @@ module.exports = {
         res.sendStatus(404);
       });
   },
-
 };
