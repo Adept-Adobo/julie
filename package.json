@@ -8,7 +8,7 @@
     "test": "k6 run testing/script.js",
     "create-db": "psql -U postgres < server/db/schema.sql",
     "start:dev": "nodemon server",
-    "start:prod": "node server",
+    "start": "node server",
     "postgres": "psql -U postgres -d products_db"
   },
   "repository": {
