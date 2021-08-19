@@ -146,6 +146,5 @@ Temporary Items
 .apdisk
 
 # Extras
-config.js
 data/
 newrelic.js
