@@ -5,13 +5,17 @@ This service acts as a back-end system to provide the resources and data for all
 
 ### Getting Started
   * Run `npm install` to download dependencies
-  * Run `npm start` to start server running on Port 3000
+  * Run `npm start` to start server running on Port 3001
 
 ### Set-up databases
   * Change the paths for your data (CSVs) in server/db/schema.sql
   * Run `npm run create-db` to load and index the database to postgreSQL
-  * Copy example.config.js, rename as config.js and file in the appropriate values
-    * Alternatively, you can use a .env file to store the variables
+  * Create a .env file and fill in the appropriate values:
+      POSTGRES_USER=username
+      POSTGRES_HOST=localhost
+      POSTGRES_PASSWORD='yourpassword'
+      POSTGRES_DB=products_db
+      POSTGRES_PORT=5432
 
 ## API services
 The following are the services provided by this API.
