@@ -13,9 +13,10 @@ This service acts as a back-end system to provide the resources and data for all
   * Create a .env file and fill in the appropriate values:
       POSTGRES_USER=username
       POSTGRES_HOST=localhost
-      POSTGRES_PASSWORD='yourpassword'
-      POSTGRES_DB=products_db
+      POSTGRES_PASSWORD=yourpassword
+      POSTGRES_DB=yourdb
       POSTGRES_PORT=5432
+      LOADER_IO=somelongstringfromloader.io
 
 ## API services
 The following are the services provided by this API.
