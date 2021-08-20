@@ -6,17 +6,17 @@ This service acts as a back-end system to provide the resources and data for all
 ### Getting Started
   * Run `npm install` to download dependencies
   * Run `npm start` to start server running on Port 3001
+  * Create a .env file and fill in the appropriate values (note LOADER_IO is optionally for testing):
+    POSTGRES_USER=username
+    POSTGRES_HOST=localhost
+    POSTGRES_PASSWORD=yourpassword
+    POSTGRES_DB=yourdb
+    POSTGRES_PORT=5432
+    LOADER_IO=somelongstringfromloader.io
 
 ### Set-up databases
   * Change the paths for your data (CSVs) in server/db/schema.sql
   * Run `npm run create-db` to load and index the database to postgreSQL
-  * Create a .env file and fill in the appropriate values:
-      POSTGRES_USER=username
-      POSTGRES_HOST=localhost
-      POSTGRES_PASSWORD=yourpassword
-      POSTGRES_DB=yourdb
-      POSTGRES_PORT=5432
-      LOADER_IO=somelongstringfromloader.io
 
 ## API services
 The following are the services provided by this API.
