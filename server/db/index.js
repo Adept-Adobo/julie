@@ -9,8 +9,7 @@ const pool = new Pool({
   database,
   password,
   port,
+  max: 100,
 });
-
-pool.connect();
 
 module.exports = pool;
