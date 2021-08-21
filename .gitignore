@@ -148,3 +148,4 @@ Temporary Items
 # Extras
 data/
 newrelic.js
+*.sh
