@@ -20,6 +20,8 @@ module.exports = {
     const client = await pool.connect();
     try {
       return await client.query(queryString, queryParams);
+    } catch (err) {
+      return err;
     } finally {
       client.release();
     }
@@ -37,6 +39,8 @@ module.exports = {
     const client = await pool.connect();
     try {
       return await client.query(queryString, [productId]);
+    } catch (err) {
+      return err;
     } finally {
       client.release();
     }
@@ -57,6 +61,8 @@ module.exports = {
     const client = await pool.connect();
     try {
       return await client.query(queryString, [productId]);
+    } catch (err) {
+      return err;
     } finally {
       client.release();
     }
@@ -69,9 +75,10 @@ module.exports = {
     const client = await pool.connect();
     try {
       return await client.query(queryString, [productId]);
+    } catch (err) {
+      return err;
     } finally {
       client.release();
     }
   },
-
 };
